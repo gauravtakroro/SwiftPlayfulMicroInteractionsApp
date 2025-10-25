@@ -30,7 +30,6 @@ struct BreathingFAB: View {
 
     var body: some View {
         Button(action: {
-            feedback()
             action()
         }) {
             Image(systemName: "plus")
@@ -43,10 +42,5 @@ struct BreathingFAB: View {
                 .animation(.easeInOut(duration: 1.1).repeatForever(autoreverses: true), value: breathe)
         }
         .onAppear { breathe = true }
-    }
-
-    private func feedback() {
-        let gen = UIImpactFeedbackGenerator(style: .medium)
-        gen.impactOccurred()
     }
 }
