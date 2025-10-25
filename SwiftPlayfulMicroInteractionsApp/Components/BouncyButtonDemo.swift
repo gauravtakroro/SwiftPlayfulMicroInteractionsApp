@@ -29,7 +29,6 @@ struct BouncyButton: View {
 
     var body: some View {
         Button {
-            feedback()
             withAnimation(.interpolatingSpring(stiffness: 300, damping: 12)) {
                 isLiked.toggle()
                 scale = 1.4
@@ -46,10 +45,5 @@ struct BouncyButton: View {
                 .scaleEffect(scale)
                 .shadow(radius: isLiked ? 8 : 2)
         }
-    }
-
-    private func feedback() {
-        let gen = UINotificationFeedbackGenerator()
-        gen.notificationOccurred(.success)
     }
 }
